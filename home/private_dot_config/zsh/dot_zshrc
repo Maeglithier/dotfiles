@@ -1,0 +1,2 @@
+# Carrega todas as configuraçẽos
+for config ($ZDOTDIR/config/*.zsh) source $config

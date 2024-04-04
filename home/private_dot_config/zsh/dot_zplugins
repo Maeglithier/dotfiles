@@ -1,0 +1,21 @@
+# Vou deixar tudo sem carregar até orgnaizar meus plugins...
+
+# Um prompt bacana
+jackharrisonsherlock/common
+
+## Utility plugins
+#romkatv/zsh-defer
+#
+## Prompt plugins
+#romkatv/powerlevel10k
+#
+## General plugins
+#jeffreytse/zsh-vi-mode
+##okay
+#zsh-users/zsh-completions path:src kind:fpath 
+#
+## Deferred plugins
+#marlonrichert/zsh-autocomplete kind:defer
+#zsh-users/zsh-autosuggestions kind:defer
+#zdharma-continuum/fast-syntax-highlighting kind:defer
+#zsh-users/zsh-history-substring-search kind:defer

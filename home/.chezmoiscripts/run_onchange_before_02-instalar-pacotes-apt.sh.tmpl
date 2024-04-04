@@ -1,0 +1,21 @@
+#!/bin/bash
+
+sudo apt update;
+sudo apt upgrade -y;
+{{ range .pacotes.linux.apt -}}
+sudo apt install {{ . }};
+{{ if eq . "megasync" -}}
+sudo apt install nautilus-megasync -y;
+{{ end -}}
+{{ end -}}
+
+{{ range $pacote := .pacotes.linux.asdf -}}
+{{ if eq $pacote "python" -}}
+sudo apt install build-essential libssl-dev zlib1g-dev \
+libbz2-dev libreadline-dev libsqlite3-dev curl \
+libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev -y;
+{{ end -}}
+{{ if eq $pacote "nodejs" -}}
+sudo apt install python3 g++ make python3-pip -y;
+{{ end -}}
+{{ end -}}

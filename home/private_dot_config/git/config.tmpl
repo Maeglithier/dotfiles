@@ -1,0 +1,31 @@
+[include]
+    path = ~/.config/git/conta_git_1
+
+[includeIf "gitdir:{{ keepassxcAttribute "conta_git_2" "gitdir" }}"]
+    path = ~/.config/git/conta_git_2
+
+[alias]
+	g = grep -Ii
+	co = checkout
+	cob = checkout -b
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	fu = fetch upstream
+	dw = diff --word-diff
+	dc = diff --cached
+	rename = branch -m
+	unstage = reset HEAD --
+	discard = checkout --
+	conflicts = diff --name-only --diff-filter=UDX
+	count = git rev-list --count
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+
+[core]
+    editor = nvim
+
+[pull]
+	rebase = true

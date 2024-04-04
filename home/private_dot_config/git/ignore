@@ -1,0 +1,66 @@
+# Global gitignore #
+####################
+
+# Use para ignorar arquivos de programas/sistema
+
+# Compilados #
+##############
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.pyc
+*.pyo
+
+# Compactados #
+###############
+# É melhor descompactar esses arquivos e fazer o commit da fonte
+# git tem seus próprios métodos de compactação integrados
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+*.msi
+
+# Registros e bancos de dados #
+###############################
+*.log
+*.sql
+*.sqlite
+
+# Arquivos do sistema #
+#######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Arquivos temporários #
+########################
+*.bak
+*.swp
+*.swo
+*~
+*#
+
+# Arquivos do IDE #
+###################
+.vscode
+.idea
+.iml
+*.sublime-workspace
+
+# Segredos e variáveis #
+########################
+.envrc
+.tool-versions

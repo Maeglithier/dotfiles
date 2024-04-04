@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+{{ range $pacote := .pacotes.linux.apt -}}
+{{ if eq $pacote "megasync" -}}
+if [[ ! -f "/etc/apt/keyrings/mega.nz.gpg" ]]; then
+    wget -qO- https://mega.nz/keys/MEGA_signing.key | sudo gpg --dearmor -o /etc/apt/keyrings/mega.nz.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/mega.mz.list" ]]; then
+    sudo sh -c 'echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/mega.nz.gpg] https://mega.nz/linux/repo/Debian_12/ ./" > /etc/apt/sources.list.d/mega.mz.list';
+fi
+{{ end -}}
+{{ if eq $pacote "code" -}}
+if [[ ! -f "/etc/apt/keyrings/packages.microsoft.gpg" ]]; then
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /etc/apt/keyrings/packages.microsoft.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/vscode.list" ]]; then
+    sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list';
+fi
+{{- end }}
+{{- end }}

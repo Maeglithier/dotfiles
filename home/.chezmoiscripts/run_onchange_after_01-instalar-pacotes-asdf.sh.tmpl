@@ -1,0 +1,25 @@
+#!/bin/bash
+
+XDG_SOURCE_HOME="$HOME"/.local/src
+XDG_DATA_HOME="$HOME"/.local/share
+XDG_CONFIG_HOME="$HOME"/.config
+
+export ASDF_DIR="$XDG_SOURCE_HOME"/asdf
+export ASDF_DATA_DIR="$XDG_DATA_HOME"/asdf
+export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME"/asdf/asdfrc
+
+source "$XDG_SOURCE_HOME/asdf/asdf.sh"
+
+asdf plugin update --all;
+
+{{ range $pacote := .pacotes.linux.apt -}}
+{{ if eq $pacote "direnv" -}}
+asdf plugin-add direnv;
+asdf direnv setup --version system --shell zsh --no-touch-rc-file;
+{{- end }}
+{{- end }}
+
+{{ range $pacote := .pacotes.linux.asdf -}}
+asdf plugin add {{ . }};
+asdf install {{ . }} latest;
+{{ end -}}

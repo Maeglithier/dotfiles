@@ -1,0 +1,38 @@
+{{- $segredo := false -}}
+{{- $key_sign := false -}}
+{{- $key_encrypt := false -}}
+{{- $keepassXcDbPath := false -}}
+{{- $keepassXcKeyFilePath := false -}}
+
+{{- $username := promptString "username" -}}
+
+{{- if eq $username "xyrfear" -}}
+{{- $key_sign = "C7A3D1D1FA8F10BEC806AA4DD52800FC0745EB4C" -}}
+{{- $key_encrypt = "FEF3D7323EDFF6A644B29CFE6B1ABDA2F0DB96F5" -}}
+{{ $keepassXcDbPath = promptString "Diretório do banco de senhas" }}
+{{ $keepassXcKeyFilePath = promptString "Diretório do arquivo chave" }}
+{{- $segredo = true -}}
+{{- end -}}
+
+{{- if $segredo -}}
+encryption: gpg
+
+gpg:
+  recipient: {{ $key_encrypt }}
+  args:
+    - --quiet
+
+{{ end -}}
+{{- if $keepassXcDbPath -}}
+keepassxc:
+  database: {{ $keepassXcDbPath | quote }}
+{{- if $keepassXcKeyFilePath }}
+  args:
+    - -k
+    - {{ $keepassXcKeyFilePath | quote }}
+{{- end }}
+
+{{ end -}}
+data:
+  key_sign: {{ $key_sign }}
+  key_encrypt: {{ $key_encrypt }}

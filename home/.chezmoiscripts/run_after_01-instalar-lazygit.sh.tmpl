@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+XDG_SOURCE_HOME=${HOME}/.local/src
+BIN=${HOME}/.local/bin
+TEMP=$(mktemp).tar.gz
+
+LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*');
+curl -L "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LATEST}_Linux_x86_64.tar.gz" -o "$TEMP";
+rm -rf ${XDG_SOURCE_HOME}/lazygit;
+mkdir ${XDG_SOURCE_HOME}/lazygit;
+tar xf $TEMP -C ${XDG_SOURCE_HOME}/lazygit;
+rm -rf $TEMP;

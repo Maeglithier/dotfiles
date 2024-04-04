@@ -1,0 +1,17 @@
+pacotes:
+  linux:
+    apt:
+    - coreutils
+    - curl
+    - wget
+    - build-essential
+    - g++
+    - make
+    - git
+    - zsh
+    - gnupg
+    - direnv
+    - megasync
+    - code
+    asdf:
+    - nodejs

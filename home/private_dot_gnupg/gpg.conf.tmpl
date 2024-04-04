@@ -1,0 +1,35 @@
+#-----------------------------
+# default key
+#-----------------------------
+
+{{ if .key_sign -}}
+default-key {{ .key_sign }}
+{{- end }}
+{{- if .key_encrypt }}
+default-recipient {{ .key_encrypt }}
+{{- end }}
+
+#-----------------------------
+# behavior
+#-----------------------------
+
+use-agent
+no-emit-version
+no-comments
+
+display-charset utf-8
+keyid-format 0xlong
+with-subkey-fingerprint
+with-fingerprint
+
+list-options show-uid-validity
+verify-options show-uid-validity
+
+#-----------------------------
+# algorithm and ciphers
+#-----------------------------
+
+personal-cipher-preferences AES256 AES192 AES CAST5
+personal-digest-preferences SHA512 SHA384 SHA256 SHA224
+cert-digest-algo SHA512
+default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed

@@ -1,0 +1,14 @@
+.local/src/antidote:
+  type: git-repo
+  url: https://github.com/mattmc3/antidote.git
+  refreshPeriod: 168h
+.local/src/asdf:
+  type: git-repo
+  url: https://github.com/asdf-vm/asdf.git
+  refreshPeriod: 168h
+.local/src/nvim:
+  type: archive
+  url: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+  checksum.sha256: https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz.sha256sum
+  stripComponents: 1
+  refreshPeriod: 168h
