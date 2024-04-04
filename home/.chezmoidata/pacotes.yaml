@@ -13,5 +13,6 @@ pacotes:
     - direnv
     - megasync
     - code
+    - nautilus-admin
     asdf:
     - nodejs

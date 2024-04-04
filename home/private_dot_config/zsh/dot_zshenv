@@ -1,4 +1,3 @@
-
 # Variaveis XDG
 export XDG_CONFIG_HOME="$HOME"/.config
 export XDG_DATA_HOME="$HOME"/.local/share
@@ -31,6 +30,10 @@ export ANTIDOTE_PLUGINS_BUNDLE=${XDG_STATE_HOME}/zsh/zpluginsdump
 # Configurando wget para XDG
 export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
 
+# Configurando Visual Studio Code para XDG
+export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
+export VSCODE_CLI_DATA_DIR="$VSCODE_PORTABLE"/cli
+
 # Man
 export MANPAGER='nvim --cmd ":lua vim.g.noplugins=1" +Man!'
 export MANWIDTH=999
@@ -40,4 +43,4 @@ export EDITOR=nvim
 export VISUAL=$EDITOR
 
 # paths
-export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:$HOME/bin:$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$ASDF_DIR/bin:$PATH
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.bin:$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$ASDF_DIR/bin:$PATH

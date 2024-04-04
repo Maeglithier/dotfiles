@@ -4,6 +4,25 @@ Todas as mudanças notáveis nestas configurações serão documentadas neste ar
 
 Possiveis ações: Adicionado, Consertado, Alterado e Removido.
 
+## 2024-04-04
+
+### Adicionado
+
+- O pacote `nautilus-admin` para abrir arquivos como adiministrador diretamente.
+- Um script para configurar o `sudoers` e evitar que crie o arquivo `~/.sudo_as_admin_successful`, o removendo caso exista.
+- Uma variavel de ambiente para fazer com que o `vscode` se comporte de forma portavel, ou seja, SEM POLUIR MINHA HOME usando apenas a pasta em `XDG_DATA_HOME/vscode`. Posso usar essa pasta para portar tudo, ou apenas usar alguns arquivos para manter as configurações e extensões sincronizadas.
+
+### Consertado
+
+- Instalação do lazygit sempre mostrando a taxa de download quando deveria mostrar nada.
+- apt install que estava pedindo permissão do usuário para instalar quando deveria ter a flag -y para aceitar tudo.
+
+### Alterado
+
+- O diretório padrão das pastas de usuário. Agora todas ficam localizadas dentro da pasta `~/Arquivos` para dar liberdade de fazer o que quiser ai dentro sem problema de mecher em nenhuma configuração nem ver seus arquivos ocultos.
+- O `Nautilus` foi configurado para abrir diretamente em `~/Arquivos/` de forma a evitar que eu veja meus arquivos de configurações em uma home mais limpa.
+- Todas as variaveis de ambiente agora são declaradas no `.zshenv` para garantir que qualquer processo tenha acesso a elas, visto que não são necessárias apenas em um terminal interativo. Revisando, `.zshenv` sempre está disponivel e atualizado. `.zshrc` somente quando abrir um terminal interativo.
+
 ## 2024-04-03
 
 - Commit inicial.

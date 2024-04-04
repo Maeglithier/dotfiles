@@ -3,7 +3,7 @@
 sudo apt update;
 sudo apt upgrade -y;
 {{ range .pacotes.linux.apt -}}
-sudo apt install {{ . }};
+sudo apt install {{ . }} -y;
 {{ if eq . "megasync" -}}
 sudo apt install nautilus-megasync -y;
 {{ end -}}
