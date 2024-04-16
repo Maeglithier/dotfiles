@@ -3,6 +3,11 @@
 
 # Use para ignorar arquivos de programas/sistema
 
+# Segredos e variáveis #
+########################
+.envrc
+.tool-versions
+
 # Compilados #
 ##############
 *.com
@@ -59,8 +64,3 @@ desktop.ini
 .idea
 .iml
 *.sublime-workspace
-
-# Segredos e variáveis #
-########################
-.envrc
-.tool-versions

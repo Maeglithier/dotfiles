@@ -4,7 +4,7 @@
 fpath=(${ZDOTDIR}/completions $fpath)
 fpath=(${ASDF_DIR}/completions $fpath)
 
-# Compatibilidade com auto compeltar do bash
+# Compatibilidade com auto completar do bash
 autoload -Uz bashcompinit
 bashcompinit -d $XDG_CACHE_HOME/zsh/bashcompdump -u
 

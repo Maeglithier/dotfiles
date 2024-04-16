@@ -1,18 +1,20 @@
 pacotes:
   linux:
     apt:
-    - coreutils
-    - curl
-    - wget
-    - build-essential
-    - g++
-    - make
-    - git
-    - zsh
-    - gnupg
-    - direnv
-    - megasync
-    - code
-    - nautilus-admin
+      - coreutils
+      - curl
+      - wget
+      - build-essential
+      - g++
+      - make
+      - git
+      - zsh
+      - gnupg
+      - direnv
+      - megasync
+      - nautilus-megasync
+      - nautilus-admin
+      - librewolf
+      - code
     asdf:
-    - nodejs
+      - nodejs

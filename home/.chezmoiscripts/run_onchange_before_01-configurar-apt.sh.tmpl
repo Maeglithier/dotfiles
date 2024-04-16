@@ -6,7 +6,7 @@ if [[ ! -f "/etc/apt/keyrings/mega.nz.gpg" ]]; then
     wget -qO- https://mega.nz/keys/MEGA_signing.key | sudo gpg --dearmor -o /etc/apt/keyrings/mega.nz.gpg;
 fi
 if [[ ! -f "/etc/apt/sources.list.d/mega.mz.list" ]]; then
-    sudo sh -c 'echo "deb [arch=amd64,arm64 signed-by=/etc/apt/keyrings/mega.nz.gpg] https://mega.nz/linux/repo/Debian_12/ ./" > /etc/apt/sources.list.d/mega.mz.list';
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/mega.nz.gpg] https://mega.nz/linux/repo/Debian_12/ ./" > /etc/apt/sources.list.d/mega.mz.list';
 fi
 {{ end -}}
 {{ if eq $pacote "code" -}}
@@ -16,5 +16,13 @@ fi
 if [[ ! -f "/etc/apt/sources.list.d/vscode.list" ]]; then
     sudo sh -c 'echo "deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list';
 fi
-{{- end }}
+{{ end -}}
+{{ if eq $pacote "librewolf" -}}
+if [[ ! -f "/etc/apt/keyrings/librewolf.gpg" ]]; then
+    wget -qO- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /etc/apt/keyrings/librewolf.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/librewolf.list" ]]; then
+    sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/librewolf.gpg] https://deb.librewolf.net bookworm main" > /etc/apt/sources.list.d/librewolf.list';
+fi
+{{ end -}}
 {{- end }}

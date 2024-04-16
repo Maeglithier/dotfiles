@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 
 XDG_SOURCE_HOME=${HOME}/.local/src
-BIN=${HOME}/.local/bin
 TEMP=$(mktemp).tar.gz
 
 LATEST=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*');
