@@ -1,0 +1,17 @@
+{{- $releasePath := joinPath .chezmoi.homeDir "/.local/share/librewolf" -}}
+{{- $releaseId := mozillaInstallHash "/usr/share/librewolf" -}}
+
+[Profile0]
+Name={{- .username }}
+IsRelative=0
+Path={{- $releasePath }}
+Default=1
+
+[General]
+StartWithLastProfile=1
+Version=2
+
+[Install{{- $releaseId -}}]
+Default={{- $releasePath }}
+Locked=1
+

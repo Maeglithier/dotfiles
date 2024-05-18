@@ -1,20 +1,27 @@
 pacotes:
-  linux:
-    apt:
-      - coreutils
+  debian:
+    nala:
       - curl
       - wget
-      - build-essential
-      - g++
-      - make
       - git
       - zsh
       - gnupg
+      - kgpg
       - direnv
       - megasync
-      - nautilus-megasync
-      - nautilus-admin
+      - dolphin-megasync
       - librewolf
+      - keepassxc-full
       - code
+      - freetube
+      - discord
+      - fonts-jetbrains-mono
+      - fonts-inter
     asdf:
       - nodejs
+  code:
+    extenções:
+      - drcika.apc-extension
+      - miguelsolorio.min-theme
+      - miguelsolorio.symbols
+      - SirTori.indenticator

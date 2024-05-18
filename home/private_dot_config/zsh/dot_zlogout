@@ -2,5 +2,7 @@
 
 # Por segurança, fecha tudo ao sair
 
-pkill gpg-agent ; pkill ssh-agent
+pkill gpg-agent;
+pkill ssh-agent;
+pkill python3;
 if [ "$SHLVL" = 1 ]; then [ -x /usr/bin/clear_console ] && /usr/bin/clear_console -q; fi

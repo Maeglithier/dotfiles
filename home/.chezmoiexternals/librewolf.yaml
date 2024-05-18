@@ -1,0 +1,4 @@
+.local/share/librewolf/extensions/keepassxc-browser@keepassxc.org.xpi:
+  type: file
+  url: https://addons.mozilla.org/firefox/downloads/latest/keepassxc-browser/latest.xpi
+  refreshPeriod: 168h

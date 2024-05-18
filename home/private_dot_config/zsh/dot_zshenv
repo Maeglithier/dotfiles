@@ -1,23 +1,26 @@
 # Variaveis XDG
-export XDG_CONFIG_HOME="$HOME"/.config
-export XDG_DATA_HOME="$HOME"/.local/share
-export XDG_STATE_HOME="$HOME"/.local/state
-export XDG_CACHE_HOME="$HOME"/.cache
-export XDG_SOURCE_HOME="$HOME"/.local/src
-export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:=/tmp}"
+export XDG_CACHE_HOME=${HOME}/.cache
+export XDG_CONFIG_HOME=${HOME}/.config
+export XDG_SOURCE_HOME=${HOME}/.local/src
+export XDG_DATA_HOME=${HOME}/.local/share
+export XDG_STATE_HOME=${HOME}/.local/state
+export XDG_RUNTIME_DIR=${XDG_RUNTIME_DIR:=/tmp}
 
 # Configurando zsh para XDG
-export ZDOTDIR="$XDG_CONFIG_HOME"/zsh
+export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
+
+# Configurando gnupg para XDG
+export GNUPGHOME=${XDG_DATA_HOME}/gnupg
 
 # Configurando npm para XDG
-export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME"/npm/npmrc
-export NPM_CONFIG_PREFIX="$XDG_DATA_HOME"/npm
-export NPM_CONFIG_CACHE="$XDG_CACHE_HOME"/npm
+export NPM_CONFIG_USERCONFIG=${XDG_CONFIG_HOME}/npm/npmrc
+export NPM_CONFIG_PREFIX=${XDG_DATA_HOME}/npm
+export NPM_CONFIG_CACHE=${XDG_CACHE_HOME}/npm
 
 # Configurando asdf para XDG
-export ASDF_DIR="$XDG_SOURCE_HOME"/asdf
-export ASDF_DATA_DIR="$XDG_DATA_HOME"/asdf
-export ASDF_CONFIG_FILE="$XDG_CONFIG_HOME"/asdf/asdfrc
+export ASDF_DIR=${XDG_SOURCE_HOME}/asdf
+export ASDF_DATA_DIR=${XDG_DATA_HOME}/asdf
+export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/asdfrc
 export ASDF_DIRENV_NO_TOUCH_RC_FILE=1
 # Parar de poluir o terminal com direnv
 export DIRENV_LOG_FORMAT=""
@@ -28,11 +31,15 @@ export ANTIDOTE_PLUGINS_FILE=${ZDOTDIR}/.zplugins
 export ANTIDOTE_PLUGINS_BUNDLE=${XDG_STATE_HOME}/zsh/zpluginsdump
 
 # Configurando wget para XDG
-export WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+export WGETRC=${XDG_CONFIG_HOME}/wget/wgetrc
 
 # Configurando Visual Studio Code para XDG
-export VSCODE_PORTABLE="$XDG_DATA_HOME"/vscode
-export VSCODE_CLI_DATA_DIR="$VSCODE_PORTABLE"/cli
+export VSCODE_PORTABLE=${XDG_DATA_HOME}/vscode
+export VSCODE_CLI_DATA_DIR=${VSCODE_PORTABLE}/cli
+
+# Configurando GTK 1 e 2 para XDG_CACHE_HOME
+export GTK_RC_FILES=${XDG_CONFIG_HOME}/gtk-1.0/gtkrc
+export GTK2_RC_FILES=${XDG_CONFIG_HOME}/gtk-2.0/gtkrc:${XDG_CONFIG_HOME}/gtk-2.0/gtkrc.mine
 
 # Man
 export MANPAGER='nvim --cmd ":lua vim.g.noplugins=1" +Man!'
@@ -43,4 +50,4 @@ export EDITOR=nvim
 export VISUAL=$EDITOR
 
 # paths
-export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:$HOME/.bin:$HOME/.local/bin:$NPM_CONFIG_PREFIX/bin:$ASDF_DIR/bin:$PATH
+export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:${HOME}/.local/bin:$ASDF_DIR/bin:$NPM_CONFIG_PREFIX/bin

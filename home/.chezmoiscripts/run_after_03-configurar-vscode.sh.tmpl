@@ -1,0 +1,11 @@
+#!/bin/bash
+
+{{ range $extenção := .pacotes.code.extenções -}}
+code --install-extension {{ $extenção }}
+{{ end }}
+
+{{- range $extenção := .pacotes.code.extenções }}
+{{- if eq $extenção "drcika.apc-extension" }}
+sudo chown -R $(whoami) /usr/share/code
+{{- end }}
+{{- end }}

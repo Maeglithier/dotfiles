@@ -1,8 +1,0 @@
-#!/usr/bin/bash
-
-XDG_SOURCE_HOME=${HOME}/.local/src
-TEMP=$(mktemp).deb
-
-curl -L "https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb" -o "$TEMP";
-sudo apt install $TEMP -y;
-rm -rf $TEMP;

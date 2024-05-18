@@ -1,5 +1,6 @@
-clear
-cat << X0
+logo() {
+    clear
+    cat << X0
 __  __              __                     
 \ \/ /_   _  _ __  / _|  ___   __ _  _ __  
  \  /| | | || '__|| |_  / _ \ / _\` || '__|
@@ -10,3 +11,6 @@ __  __              __
 A forma perfeita do cubo isométrico imperfeito
 
 X0
+}
+
+logo

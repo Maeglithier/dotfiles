@@ -4,6 +4,44 @@ Todas as mudanças notáveis nestas configurações serão documentadas neste ar
 
 Possiveis ações: Adicionado, Consertado, Alterado e Removido.
 
+## 2024-05-18
+
+### Adicionado
+
+- Um arquivo [README.md](./README.md) contendo informações 
+- Symlink na pasta de Documentos e Imagens para suas respectivas pastas dentro do MEGA para que sejam sincronizadas assim como o OneDrive faz no windows.
+- O pacote `librewolf` como navegador padrão. Ele é uma versão mais "segura" do firefox, com configurações padrão voltado em uma maior segurança.
+- Um arquivo `user.js` na pasta do chezmoi para que alguams configurações manuais sempre sejam reaplicadas. Atualmente, desabilidar a função chata do PiP dos videos.
+- Os pacotes `freetube` `discord` e algumas fontes foram adicionados.
+- Arquivo que o Dolphing usa para determinar a localização dos arquivos de usuários, assim como alguns bookmarks. Esses arquivo mantem os bookmarks e as pastas consistentes entre instalações.
+- Adicionei o arquivo `user-dirs.locale` apenas para garantir que a linguagem seja a correta e a esperada.
+- Script que configura o zsh como shell padrão.
+
+## Consertado
+
+- Problemas de espaçamento no arquivo template `.chezmoi.yaml.tmpl`.
+
+### Alterado
+
+- Iniciar e desligar um servidor python local no login e logout. Esse servidor dá host na minha startpage.
+- Outras configurações do zsh foram alteradas. Alguns aliases criados mas nada de importante.
+- Adicionar novas variaveis de ambiente XDG e criar o PATH manualmente no `.zshenv`.
+- As configurações do vscode para que ficem atualziadas com as configuraçẽos atuais.
+- Os arquivos do GNUPG agora ficam em `~/.local/share/gnupg`. Não, isso não gera problemas em relação as chaves e pode ser utilziado tranquilamente. Só se for usar um programa obscuro ou antigo que não respeite variaveis de ambiente ou XDG...
+- Localização de toda a informação armazenada pelo librewolf. Agora tudo ficam em `~/.local/share/librewolf`. Realizar backup desta pasta ou de todo o share agora salva tudo do librewolf também.
+- Agora estou usando o KDE, logo as configurações são pensadas no KDE.
+- Agora as extensões padrão do vscode são definidas de forma declarativa pelo chezmoi, igual aos pacotes apt do sistema.
+- Repositórios e arquivos que o chezmoi baixa da internet foram movidos para a pasta `.chezmoiexternals` para que seja possivel organizar cada arquivo ou repositório baixado por algum tipo de categoria.
+- Localização dos arquivos de usuário. Para separar completamente o ambiente do usuário de qualquer pasta oculta ou arquivos que não podem seguir as especificações XDG, eu decidi mover todo o ambiente de usuário para `~/Arquivos`. Desta forma, meus arquivos nunca irão se misturar com nenhuma configuração e vise-versa.
+- O script de instalação foi modificado para usar o bash e os comandos foram simplificados.
+- Alguns scripts do chezmoi receberam pequenas mudanças.
+- Script que instala pacotes agora ficou mais simples de instalar outros pacotes quando um pacote em especifico for identificado.
+
+### Removido
+
+- Um atalho para o nautilus que havia sido criado quando eu ainda utilziava GNOME.
+- O pacote `chrome` pois não preciso desse navegador.
+
 ## 2024-04-04
 
 ### Adicionado

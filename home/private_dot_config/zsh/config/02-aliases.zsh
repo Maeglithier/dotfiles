@@ -14,21 +14,23 @@ alias se="sudo $EDITOR"
 alias ce="chezmoi edit"
 
 # atalhos
-alias dotfiles="cd ~/.local/src/dotfiles"
+alias dotfiles="cd ~/.local/share/chezmoi/home"
 alias src='cd ~/.local/src'
 
 # comandos
 alias apt="sudo apt"
+alias nala="sudo nala"
 alias apagar="sudo rm -rf"
-alias cls="clear"
-alias procurar="sudo apt update && sudo apt search"
-alias instalar="sudo apt update && sudo apt upgrade -y && sudo apt install -y"
-alias reinstalar="sudo apt reinstall -y"
-alias desinstalar="sudo apt remove -y"
-alias autoremover="sudo apt autoremove -y"
-alias atualizar="sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y"
+alias cls="logo"
+alias clear="logo"
+alias procurar="sudo nala search"
+alias instalar="sudo nala install"
+alias desinstalar="sudo nala remove"
+alias atualizar="sudo nala upgrade"
+alias upgrade="sudo nala upgrade"
 alias sair="exit"
-alias alertar='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias local-server="python3 -m http.server"
+alias alerta='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alerta$//'\'')"'
 
 #git
 alias ga="git add"

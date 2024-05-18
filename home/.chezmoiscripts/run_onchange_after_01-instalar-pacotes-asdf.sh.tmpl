@@ -12,14 +12,14 @@ source "$XDG_SOURCE_HOME/asdf/asdf.sh"
 
 asdf plugin update --all;
 
-{{ range $pacote := .pacotes.linux.apt -}}
+{{ range $pacote := .pacotes.debian.nala -}}
 {{ if eq $pacote "direnv" -}}
 asdf plugin-add direnv;
 asdf direnv setup --version system --shell zsh --no-touch-rc-file;
 {{- end }}
 {{- end }}
 
-{{ range $pacote := .pacotes.linux.asdf -}}
+{{ range $pacote := .pacotes.debian.asdf -}}
 asdf plugin add {{ . }};
 asdf install {{ . }} latest;
 {{ end -}}

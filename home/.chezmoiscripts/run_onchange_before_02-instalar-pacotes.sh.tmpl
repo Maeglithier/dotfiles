@@ -1,0 +1,9 @@
+#!/bin/bash
+
+sudo nala upgrade -y;
+sudo nala install -y{{ range $pacote := .pacotes.debian.nala }} {{ $pacote }}{{ end }}
+
+{{- range $plugin := .pacotes.debian.asdf }}
+{{- if eq $plugin "python" }} build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev curl libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev {{- end }}
+{{- if eq $plugin "nodejs" }} python3 g++ make python3-pip {{- end }}
+{{- end }};

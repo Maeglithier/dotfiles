@@ -1,0 +1,44 @@
+#!/bin/bash
+
+{{ range $pacote := .pacotes.debian.nala -}}
+{{ if eq $pacote "megasync" -}}
+if [[ ! -f "/usr/share/keyrings/meganz-archive-keyring.gpg" ]]; then
+    wget -qO- https://mega.nz/keys/MEGA_signing.key | sudo gpg --dearmor -o /usr/share/keyrings/meganz-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/megasync.list" ]]; then
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/meganz-archive-keyring.gpg] https://mega.nz/linux/repo/Debian_12/ ./" | sudo tee /etc/apt/sources.list.d/megasync.list >/dev/null;
+fi
+{{ end -}}
+{{ if eq $pacote "code" -}}
+if [[ ! -f "/usr/share/keyrings/microsoft-archive-keyring.gpg" ]]; then
+    wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo gpg --dearmor -o /usr/share/keyrings/microsoft-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/vscode.list" ]]; then
+    echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/microsoft-archive-keyring.gpg] https://packages.microsoft.com/repos/code stable main" | sudo tee /etc/apt/sources.list.d/vscode.list >/dev/null;
+fi
+{{ end -}}
+{{ if eq $pacote "librewolf" -}}
+if [[ ! -f "/usr/share/keyrings/librewolf-archive-keyring.gpg" ]]; then
+    wget -qO- https://deb.librewolf.net/keyring.gpg | sudo gpg --dearmor -o /usr/share/keyrings/librewolf-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/librewolf.list" ]]; then
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/librewolf-archive-keyring.gpg] https://deb.librewolf.net bookworm main" | sudo tee /etc/apt/sources.list.d/librewolf.list >/dev/null;
+fi
+{{ end -}}
+{{ if eq $pacote "freetube" -}}
+if [[ ! -f "/usr/share/keyrings/freetube-archive-keyring.gpg" ]]; then
+    wget -qO- https://maeglithier.github.io/freetube-apt/pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/freetube-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/freetube.list" ]]; then
+    echo "deb [arch=amd64,arm64,armhf signed-by=/usr/share/keyrings/freetube-archive-keyring.gpg] https://maeglithier.github.io/freetube-apt stable main" | sudo tee /etc/apt/sources.list.d/freetube.list >/dev/null;
+fi
+{{ end -}}
+{{ if eq $pacote "discord" -}}
+if [[ ! -f "/usr/share/keyrings/discord-archive-keyring.gpg" ]]; then
+    wget -qO- https://maeglithier.github.io/discord-apt/pubkey.asc | sudo gpg --dearmor -o /usr/share/keyrings/discord-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/discord.list" ]]; then
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/discord-archive-keyring.gpg] https://maeglithier.github.io/discord-apt stable main" | sudo tee /etc/apt/sources.list.d/discord.list >/dev/null;
+fi
+{{ end -}}
+{{- end }}
