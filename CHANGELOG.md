@@ -8,7 +8,7 @@ Possiveis ações: Adicionado, Consertado, Alterado e Removido.
 
 ### Adicionado
 
-- O pacote `nginx` e um script de instalação para que ao acessar `http://startpage.local` ele redirecione a `http://172.0.0.1:9999` e assim minha startpage seja carregada tranquilamente. Há a possibilidade de facilmente adicionar novos serviços.
+- O pacote `nginx` e um script de instalação para que ao acessar `http://inicio` ele redirecione a `http://172.0.0.1:9999` e assim minha startpage seja carregada tranquilamente. Há a possibilidade de facilmente adicionar novos serviços.
 - Um arquivo [README.md](./README.md) contendo informações 
 - Symlink na pasta de Documentos e Imagens para suas respectivas pastas dentro do MEGA para que sejam sincronizadas assim como o OneDrive faz no windows.
 - O pacote `librewolf` como navegador padrão. Ele é uma versão mais "segura" do firefox, com configurações padrão voltado em uma maior segurança.
@@ -37,6 +37,7 @@ Possiveis ações: Adicionado, Consertado, Alterado e Removido.
 - O script de instalação foi modificado para usar o bash e os comandos foram simplificados.
 - Alguns scripts do chezmoi receberam pequenas mudanças.
 - Script que instala pacotes agora ficou mais simples de instalar outros pacotes quando um pacote em especifico for identificado.
+- Agora a página inicial do librewolf será `http://inicio`
 
 ### Removido
 

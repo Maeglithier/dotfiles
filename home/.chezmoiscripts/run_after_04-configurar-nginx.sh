@@ -3,7 +3,7 @@ cat << X0 | sudo tee /etc/nginx/conf.d/startpage.conf >/dev/null;
 server {
     listen 80;
 
-    server_name startpage.local;
+    server_name inicio;
 
     location / {
         proxy_pass http://127.0.0.1:9999/;
