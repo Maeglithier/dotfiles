@@ -44,6 +44,13 @@ Após instalar todas as configurações e programas com o comando acima, não es
 
 Após realizar a instalação de todas essas configurações e aplicativos, ainda há coisas a ser feitas, porém são opcionais.
 
+- Execute o comando abaixo para utilizar o ssh nesse dotfiles.
+
+```bash
+cd ~/.local/share/chezmoi;
+git remote set-url origin git@github.com:Maeglithier/dotfiles.git;
+```
+
 - Usar o LibreWolf como navegador padrão. É um navegador privado e seguro que me ganhou com seu pequeno charme. Já vem configurado e pronto para usar.
     - Use o ublock no modo dificil ou médio. Para isso, ative tudo que é lista de filtro, ative o modo avançado e bloqueie tudo que é 3rd-party. Pesquisa ai como ativar esse modo dificil ou médio.
     - Use o keepass como gerenciador de senha, ou outro de preferência. Um gerenciador de senhas é uma boa forma de manter suas contas seguras com senhas diferentes. Nunca use o gerenciador de senhas do navegador, pois ele não é nem um pouco seguro e você pode perder facilmente as senahs.
