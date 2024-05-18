@@ -5,6 +5,7 @@ pacotes:
       - wget
       - git
       - zsh
+      - nginx
       - gnupg
       - kgpg
       - direnv
