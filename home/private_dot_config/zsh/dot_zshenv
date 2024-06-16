@@ -12,6 +12,9 @@ export ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 # Configurando gnupg para XDG
 export GNUPGHOME=${XDG_DATA_HOME}/gnupg
 
+# Configurando node para XDG
+export NODE_REPL_HISTORY=${XDG_DATA_HOME}/node_repl_history
+
 # Configurando npm para XDG
 export NPM_CONFIG_USERCONFIG=${XDG_CONFIG_HOME}/npm/npmrc
 export NPM_CONFIG_PREFIX=${XDG_DATA_HOME}/npm
@@ -39,15 +42,26 @@ export VSCODE_CLI_DATA_DIR=${VSCODE_PORTABLE}/cli
 
 # Configurando GTK 1 e 2 para XDG_CACHE_HOME
 export GTK_RC_FILES=${XDG_CONFIG_HOME}/gtk-1.0/gtkrc
-export GTK2_RC_FILES=${XDG_CONFIG_HOME}/gtk-2.0/gtkrc:${XDG_CONFIG_HOME}/gtk-2.0/gtkrc.mine
+export GTK2_RC_FILES=${XDG_CONFIG_HOME}/gtk-2.0/gtkrc
+
+# Configurando Ren'Py para XDG
+export RENPY_PATH_TO_SAVES=${XDG_DATA_HOME}/renpy
 
 # Man
 export MANPAGER='nvim --cmd ":lua vim.g.noplugins=1" +Man!'
 export MANWIDTH=999
 
+# Antidote - Plugin - zsh-auto-notify : Notifica quando um comando longo termina de executar
+# TODO: Melhorar a mensagem de alerta para algo simples e agradável.
+export AUTO_NOTIFY_TITLE="Psiu! O comando \"%command\" terminou de executar"
+export AUTO_NOTIFY_BODY="Levou %elapsed segundos para terminar e saiu com o código %exit_code"
+
+# Antidote - Plugin - zsh-z : Guarda uma lista de diretórios acessados frequentemente
+export ZSHZ_DATA=${XDG_DATA_HOME}/z
+
 # Editor
 export EDITOR=nvim
-export VISUAL=$EDITOR
+export VISUAL=${EDITOR}
 
 # paths
-export PATH=/bin:/usr/bin:/usr/local/bin:/sbin:/usr/sbin:/usr/local/sbin:${HOME}/.local/bin:$ASDF_DIR/bin:$NPM_CONFIG_PREFIX/bin
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/games/:${HOME}/.local/bin:${ASDF_DIR}/bin:${NPM_CONFIG_PREFIX}/bin

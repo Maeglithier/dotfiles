@@ -1,0 +1,9 @@
+#!/bin/bash
+
+PATH=${PATH}:${HOME}/.local/bin
+
+rm ${HOME}/.local/bin/getnf
+curl -fsSL https://raw.githubusercontent.com/getnf/getnf/main/install.sh | bash
+
+getnf -U
+getnf -i "{{ range $font := .pacotes.debian.getnf }}{{ $font }} {{ end }}"

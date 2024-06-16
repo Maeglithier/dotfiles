@@ -1,0 +1,95 @@
+# Navegação - Uso rapido e veloz de comandos enquanto navega pelo terminal.
+alias ~="cd ~"
+alias ..="up"
+alias ...="up 2"
+alias ....="up 3"
+alias .....="up 4"
+alias ......="up 5"
+alias .......="up 6"
+alias ........="up 7"
+alias .........="up 8"
+alias ..........="up 9"
+alias ...........="up 10"
+alias c="clear"
+alias e="$EDITOR"
+alias se="sudo $EDITOR"
+alias ce="chezmoi edit"
+alias dot="chezmoi cd"
+alias conf="cd ~/.config"
+alias loc="cd ~/.local"
+alias src="cd ~/.local/src"
+alias repo="cd ~/.local/git"
+alias share="cd ~/.local/share"
+
+# Comandos padrão - Modificação de alguns comandos padrão.
+alias sudo="sudo "
+alias mv="mv -i"
+alias cp="cp -i"
+alias ln="ln -i"
+alias clear="logo"
+alias apt="sudo apt"
+alias nala="sudo nala"
+alias mkdir="mkdir -p"
+alias rm="rm -r --preserve-root"
+alias srm="sudo rm -r --preserve-root"
+alias chown="chown --preserve-root"
+alias chmod="chmod --preserve-root"
+alias chgrp="chgrp --preserve-root"
+alias mount="mount |column -t"
+alias ping="ping -c 5"
+# Cores - Adiciona cores a alguns comandos
+# ls
+alias ls="ls  --color=auto -F"
+alias l="ls   --color=auto -F"
+alias ll="ls  --color=auto -lAh"
+alias la="ls  --color=auto -AF"
+# grep
+alias grep="grep --color=auto"
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+
+# Novos comandos - Criação de novos comandos para executar para reduzir a digitação
+alias vi="nvim"
+alias svi="sudo nvim"
+alias root='sudo -i'
+alias su='sudo -i'
+# PT_br
+alias sair="exit"
+alias sim=""
+alias procurar="sudo nala search"
+alias instalar="sudo nala install"
+alias atualizar="sudo nala upgrade"
+alias desinstalar="sudo nala remove"
+alias lixo='mv -t ~/.local/share/Trash '
+alias alerta='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alerta$//'\'')"'
+# EN_us
+alias yes=""
+alias path="echo \${PATH} | tr ':' '\n'"
+alias mkfile="touch"
+alias update="sudo nala update"
+alias upgrade="sudo nala upgrade"
+alias server="python3 -m http.server"
+alias trash='mv -t ~/.local/share/Trash '
+
+# Git - Varios comandos git reduzidos
+alias ga="git add"
+alias gb="git branch"
+alias gc="git clone"
+alias gcm="git commit -m"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcs="git commit -S -m"
+alias gd="git difftool"
+alias gdc="git difftool --cached"
+alias gf="git fetch"
+alias gg="git graph"
+alias ggg="git graphgpg"
+alias gm="git merge"
+alias gp="git pull"
+alias gps="git push"
+alias gpr="gh pr create"
+alias gr="git rebase -i"
+alias gs="git status -sb"
+alias gt="git tag"
+alias gu="git reset @ --" #think git unstage
+alias gx="git reset --hard @"

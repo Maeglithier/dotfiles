@@ -4,6 +4,28 @@ Todas as mudanças notáveis nestas configurações serão documentadas neste ar
 
 Possiveis ações: Adicionado, Consertado, Alterado e Removido.
 
+## 2024-06-16
+
+## Adicionado
+
+- A pasta `temp` dentro de `downlaod` apaga automaticamente toda vez que o computador reiniciar. excelente para não juntar entulho. Tudo o que for preciso, se organiza fora de `~/Arquivos/Downloads/Temp`. Um script configura isso.
+- Criei um script chamado `rpgmaker` com o bashly cujo objetivo é tornar jogos em rpg maker mz/mz jogaveis no linux. A ideia veio dos scripts [desse repositório](https://github.com/Revival8697/RPG-Maker-MV-MZ-Linux-Guide). Além do que já é feito, acabei adicionando alguns outros detalhes. porém a autoria vem toda do repositório mencionado. Apenas executando `rpgmaker setup` qualquer jogo rpg poderá ser jogado no linux. possui outras funções, para saber mais, execute `rpgmaker help`.
+- Agora o librewolf conta com um chrome.css simples e bonito.
+
+## Alterado
+
+- Varias configurações do vscode.
+- Adicionado o `waydroid`, `wine` e `fontconfig` aos pacotes apt.
+- Adicionado o programa `getnf` e as fontes `Meslo` e `Jet Brains Mono`, ambas nerd font.
+- Atualizando as extensões padrão do vscode.
+- Um pouco da configuração do nginx. Nada relevante, no fim tem o memso efeito.
+- Git ignore global agora tem ignora todo `.env*`, pastas de compilação como `build` e `dist`, `*-lock.json` e cache do eslint.
+- Mudanças ao zsh. Modificando plugins, adicionando p10k. Os comandos custom agora ficam dentro da pasta de funções.
+
+## Removido
+
+- Os server locais não mais serão inicados pelo python. na verdade ele foi substituido pelo nginx.
+
 ## 2024-05-18
 
 ### Adicionado

@@ -1,0 +1,66 @@
+name: rpgmaker
+help: A program to make rpg maker mv/mz games playable in linux
+version: 0.1.0
+
+environment_variables:
+  - name: rpgmaker_source_path
+    help: Location of the program source files
+    default: ${HOME}/.local/src/Rpg Maker Linux
+    private: true
+
+flags:
+  - long: --debug
+    short: -d
+    help: Enable debug mode
+
+commands:
+  - name: configure
+    alias: [c, config]
+    help: Configure and install the Game Engine. Only need to run once. Can be used to update the Engine.
+  - name: setup
+    alias: s
+    help: Prepare the game for the Linux environment.
+    args:
+      - name: game_path
+        help: Set the game path. If not specified, the current directory will be used.
+    flags:
+      - long: --update
+        short: -u
+        help: Update the pixi.js and enhance performance, but might cause erros.
+      - long: --decrypt
+        short: -d
+        help: Decrypt game files.
+      - long: --optimize
+        short: -o
+        help: Optimize Image and Audio file and reduce overall file size. Require decrypted game files.
+      - long: --video
+        short: -v
+        help: Optimize video files. May take a while, maybe 1 hour or more. Require --optimize flag.
+  - name: update
+    alias: u
+    help: Update the pixi.js and enhance performance, but might cause erros.
+    args:
+      - name: game_path
+        help: Set the game path. If not specified, the current directory will be used.
+  - name: decrypt
+    alias: d
+    help: Decrypt game files.
+    args:
+      - name: game_path
+        help: Set the game path. If not specified, the current directory will be used.
+  - name: optimize
+    alias: o
+    help: Optimize Image and Audio file and reduce overall file size. Require decrypted game files.
+    args:
+      - name: game_path
+        help: Set the game path. If not specified, the current directory will be used.
+    flags:
+      - long: --video
+        short: -v
+        help: Optimize video files. May take a while, maybe 1 hour or more. Require --optimize flag.
+  - name: test
+    alias: t
+    help: Testar coisas
+    args:
+      - name: game_path
+        help: Set the game path. If not specified, the current directory will be used.

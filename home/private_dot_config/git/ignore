@@ -5,11 +5,20 @@
 
 # Segredos e variáveis #
 ########################
-.envrc
+.env*
 .tool-versions
+
+# Custom #
+##########
+.custom.*
 
 # Compilados #
 ##############
+releases/
+build/
+compiled/
+output/
+dist/
 *.com
 *.class
 *.dll
@@ -38,6 +47,7 @@
 *.log
 *.sql
 *.sqlite
+*-lock.json
 
 # Arquivos do sistema #
 #######################
@@ -63,4 +73,9 @@ desktop.ini
 .vscode
 .idea
 .iml
+*.code-workspace
 *.sublime-workspace
+
+# Arquivos de cache #
+#####################
+.eslintcache

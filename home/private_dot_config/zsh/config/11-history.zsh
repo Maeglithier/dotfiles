@@ -1,7 +1,7 @@
 HISTSIZE=130000
 SAVEHIST=100000
-export HISTFILE="$XDG_STATE_HOME"/zsh/history
-export LESSHISTFILE="$XDG_STATE_HOME"/less/history
+export HISTFILE=${XDG_STATE_HOME}/zsh/history
+export LESSHISTFILE=${XDG_STATE_HOME}/less/history
 
 # timestamps
 HIST_STAMPS=dd/mm/yyyy

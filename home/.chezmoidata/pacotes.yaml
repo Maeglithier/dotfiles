@@ -16,13 +16,24 @@ pacotes:
       - code
       - freetube
       - discord
+      - wine
+      - waydroid
+      - fontconfig
       - fonts-jetbrains-mono
       - fonts-inter
     asdf:
       - nodejs
+    getnf:
+      - JetBrainsMono
+      - Meslo
   code:
     extenções:
       - drcika.apc-extension
-      - miguelsolorio.min-theme
-      - miguelsolorio.symbols
-      - SirTori.indenticator
+      - Catppuccin.catppuccin-vsc
+      - Catppuccin.catppuccin-vsc-icons
+      - miguelsolorio.fluent-icons
+      - yzhang.markdown-all-in-one
+      - esbenp.prettier-vscode
+      - mhutchie.git-graph
+      - foxundermoon.shell-format
+      - timonwong.shellcheck

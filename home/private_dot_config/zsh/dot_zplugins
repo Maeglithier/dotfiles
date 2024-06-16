@@ -1,21 +1,16 @@
-# Vou deixar tudo sem carregar até orgnaizar meus plugins...
 
-# Um prompt bacana
-jackharrisonsherlock/common
+# Utilitário
+romkatv/zsh-defer
 
-## Utility plugins
-#romkatv/zsh-defer
-#
-## Prompt plugins
-#romkatv/powerlevel10k
-#
-## General plugins
-#jeffreytse/zsh-vi-mode
-##okay
-#zsh-users/zsh-completions path:src kind:fpath 
-#
-## Deferred plugins
-#marlonrichert/zsh-autocomplete kind:defer
-#zsh-users/zsh-autosuggestions kind:defer
-#zdharma-continuum/fast-syntax-highlighting kind:defer
-#zsh-users/zsh-history-substring-search kind:defer
+# Carregar primeiro
+romkatv/PowerLevel10k # Um prompt bonito, cheio de recurso, configurável e que se adequa a esta configuração
+zsh-users/zsh-autosuggestions # Sugere comandos conforme digita, baseia-se no histórico e sugestões
+marlonrichert/zsh-autocomplete # Sugere comandos enquanto digita, assim como pressionar TAB
+MichaelAquilina/zsh-auto-notify # Notifica quando um comando longo termina de executar
+agkozak/zsh-z # Guarda uma lista de diretórios acessados frequentemente
+
+# Carregar por ultimo
+zdharma-continuum/fast-syntax-highlighting kind:defer # Cores nos comandos, versão mais leve
+
+## Carregar no fpath
+zsh-users/zsh-completions path:src kind:fpath # Adiciona novas sugestões para auto-completar no TAB

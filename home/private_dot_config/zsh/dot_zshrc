@@ -1,2 +1,5 @@
 # Carrega todas as configuraçẽos
 for config ($ZDOTDIR/config/*.zsh) source $config
+
+# Carrega todas as funções
+for function ($ZDOTDIR/functions/*.zsh) source $function

@@ -41,4 +41,15 @@ if [[ ! -f "/etc/apt/sources.list.d/discord.list" ]]; then
     echo "deb [arch=amd64 signed-by=/usr/share/keyrings/discord-archive-keyring.gpg] https://maeglithier.github.io/discord-apt stable main" | sudo tee /etc/apt/sources.list.d/discord.list >/dev/null;
 fi
 {{ end -}}
+{{ if eq $pacote "wine" -}}
+    sudo dpkg --add-architecture i386;
+{{ end -}}
+{{ if eq $pacote "waydroid" -}}
+if [[ ! -f "/usr/share/keyrings/waydroid-archive-keyring.gpg" ]]; then
+    wget -qO- https://repo.waydro.id/waydroid.gpg | sudo gpg --dearmor -o /usr/share/keyrings/waydroid-archive-keyring.gpg;
+fi
+if [[ ! -f "/etc/apt/sources.list.d/waydroid.list" ]]; then
+    echo "deb [arch=amd64 signed-by=/usr/share/keyrings/waydroid-archive-keyring.gpg] https://repo.waydro.id/ trixie main" | sudo tee /etc/apt/sources.list.d/waydroid.list >/dev/null;
+fi
+{{ end -}}
 {{- end }}
