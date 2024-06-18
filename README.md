@@ -6,7 +6,7 @@ I use Debian btw.
 
 Seja muito bem vindo ao meu arquivos com ponto. Neste repositório você vai encontrar todos os arquivos ocultos e alguns não ocultos que configuram toda a minha área de trabalho e o meu computador. Sinta-se livre para analisar minhas configurações e incorporar ao seu próprio repositório se você quiser, eu não me importo. Aceito sugestões para otimizar ou melhorar meu ambiente, mas não venha querer controlar o que eu fiz ou deixei de fazer.
 
-Aliás, eu uso o Debian.
+Aliás, eu uso a estabilidade. (debian)
 
 ## Chezmoi
 

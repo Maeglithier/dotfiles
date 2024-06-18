@@ -10,7 +10,7 @@ pacotes:
       - kgpg
       - direnv
       - megasync
-      - dolphin-megasync
+      - nautilus-megasync
       - librewolf
       - keepassxc-full
       - code
